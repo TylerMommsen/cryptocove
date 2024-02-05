@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function HowItWorks() {
 	return (
-		<section id="how-it-works" className="bg-background1 flex pl-4 pr-4 pt-12 pb-12 justify-center">
+		<section id="how-it-works" className="bg-background1 flex pl-4 pr-4 pt-16 pb-16 justify-center">
 			<div className="mx-auto max-w-7xl flex flex-col gap-4 justify-center items-center">
 				<h1 className="font-bold text-4xl md:text-5xl leading-tight">How It Works</h1>
 				<div id="steps" className="flex flex-col md:flex-row justify-center items-center gap-8">
