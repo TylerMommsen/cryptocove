@@ -17,6 +17,9 @@ const config: Config = {
 				background2: '#141416',
 				textGray: '#B1B5C3',
 			},
+			screens: {
+				'lg': '992px',
+			},
 		},
 	},
 	plugins: [],
