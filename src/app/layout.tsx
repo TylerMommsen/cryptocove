@@ -16,26 +16,29 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={inter.className + ' min-h-screen flex flex-col'}>
-				<header className="bg-white text-black sticky top-0 z-10">
-					<section className="max-w-4xl text-black flex p-4 justify-between items-center mx-auto">
-						<h1>CryptoCove</h1>
+			<body className={`${inter.className} w-screen min-h-screen flex flex-col overflow-x-hidden`}>
+				<header className="bg-background2 shadow-md shadow-background2 fixed top-0 w-screen">
+					<section className="max-w-7xl text-white flex p-4 justify-between items-center mx-auto">
+						<h1 className="font-bold text-xl">CryptoCove</h1>
 						<div>
-							<button id="mobile-open-button" className="text-3xl sm:hidden focus:outline-none">
+							<button id="mobile-open-button" className="text-3xl md:hidden focus:outline-none">
 								&#9776;
 							</button>
-							<nav className="hidden sm:block space-x-8 text-xl" aria-label="main">
-								<a href="#home" className="hover:opacity-90">
+							<nav className="hidden md:block space-x-8 text-xl" aria-label="main">
+								<a href="#home" className="hover:opacity-90 font-bold">
 									Home
 								</a>
-								<a href="#market" className="hover:opacity-90">
+								<a href="#market" className="hover:opacity-90 font-bold">
 									Market
 								</a>
-								<a href="#choose-us" className="hover:opacity-90">
+								<a href="#how-it-works" className="hover:opacity-90 font-bold">
+									How It Works
+								</a>
+								<a href="#why-us" className="hover:opacity-90 font-bold">
 									Why Us
 								</a>
-								<a href="#join" className="hover:opacity-90">
-									Join
+								<a href="#download" className="hover:opacity-90 font-bold">
+									Download
 								</a>
 							</nav>
 						</div>
@@ -44,7 +47,54 @@ export default function RootLayout({
 
 				{children}
 
-				<footer className="text-center my-auto p-6">Copyright © 2024 Tyler Mommsen</footer>
+				<footer className="my-auto p-6">
+					<section id="footer-products" className="flex flex-col gap-6 p-6">
+						<h3>Products</h3>
+						<ul className="flex flex-col gap-2">
+							<li>Spot</li>
+							<li>Inverse Perpetual</li>
+							<li>USDT Perpetual</li>
+							<li>Exchange</li>
+							<li>Launchpad</li>
+							<li>Binance Pay</li>
+						</ul>
+					</section>
+
+					<section id="footer-services" className="flex flex-col gap-6 p-6">
+						<h3>Services</h3>
+						<ul className="flex flex-col gap-2">
+							<li>Buy Crypto</li>
+							<li>Markets</li>
+							<li>Trading Fee</li>
+							<li>Affiliate Program</li>
+							<li>Referrel Program</li>
+							<li>API</li>
+						</ul>
+					</section>
+
+					<section id="footer-support" className="flex flex-col gap-6 p-6">
+						<h3>Support</h3>
+						<ul className="flex flex-col gap-2">
+							<li>CryptoCove Learn</li>
+							<li>Help Center</li>
+							<li>User Feedback</li>
+							<li>Submit a Request</li>
+							<li>API Documentation</li>
+							<li>Trading Rules</li>
+						</ul>
+					</section>
+
+					<section id="footer-about-us" className="flex flex-col gap-6 p-6">
+						<h3>About Us</h3>
+						<ul className="flex flex-col gap-2">
+							<li>About CryptoCove</li>
+							<li>Authenticity Check</li>
+							<li>Careers</li>
+							<li>Business Contracts</li>
+							<li>Blog</li>
+						</ul>
+					</section>
+				</footer>
 			</body>
 		</html>
 	);
