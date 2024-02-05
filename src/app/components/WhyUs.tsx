@@ -12,7 +12,9 @@ export default function WhyUs() {
 					<Image src="/PNG/Altcoin.png" width={2000} height={2000} alt="coins-icon" />
 				</div>
 				<div className="flex flex-col">
-					<h1 className="font-bold text-4xl md:text-5xl leading-tight mb-6">Why Choose Us?</h1>
+					<h1 className="font-bold text-4xl md:text-5xl leading-tight mb-6 text-center">
+						Why Choose Us?
+					</h1>
 					<section className="flex flex-col gap-1 mb-4">
 						<h3 className="font-bold text-xl">Low Fees, High Returns</h3>
 						<p className="text-textGray">
