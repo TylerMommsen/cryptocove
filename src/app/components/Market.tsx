@@ -44,29 +44,36 @@ export default function Market() {
 					<>
 						<div className="hover:bg-gray-900">
 							<div key={coin.id} className="grid grid-cols-4 w-full">
-								<div className="place-self-start flex gap-6 items-center h-full pl-4 pr-4 pt-2 pb-2">
+								<div className="place-self-start flex gap-2 lg:gap-6 items-center h-full lg:pl-4 lg:pr-4 lg:pt-2 lg:pb-2">
 									<p>{counter}</p>
 									<Image src={coin.image} width={40} height={40} alt="coin image" />
-									<p className="text-center">{coin.name}</p>
-									<p className="text-textGray">{coin.symbol.toUpperCase()}</p>
+									<p className="text-center hidden lg:block">{coin.name}</p>
+									<p className="text-textGray text-xs lg:text-base">{coin.symbol.toUpperCase()}</p>
 								</div>
 
-								<div className="flex place-self-center items-center h-full pl-4 pr-4 pt-2 pb-2">
-									<p className="text-center">{'$' + coin.current_price.toLocaleString()}</p>
+								<div className="flex place-self-center items-center h-full lg:pl-4 lg:pr-4 lg:pt-2 lg:pb-2">
+									<p className="text-center text-xs lg:text-base">
+										{'$' + coin.current_price.toLocaleString()}
+									</p>
 								</div>
 
-								<div className="place-self-center flex items-center h-full pl-4 pr-4 pt-2 pb-2">
-									<p
-										className={
+								<div className="place-self-center flex items-center h-full lg:pl-4 lg:pr-4 lg:pt-2 lg:pb-2">
+									<div
+										className={`flex items-center gap-1 ${
 											coin.price_change_percentage_24h < 0
 												? 'text-red-500 bg-red-400 bg-opacity-10 p-2 rounded-lg font-bold'
 												: 'text-green-500 bg-green-400 bg-opacity-10 p-2 rounded-lg font-bold'
-										}
+										}`}
 									>
-										{coin.price_change_percentage_24h.toLocaleString() + '%'}
-									</p>
+										<p className="hidden lg:block">
+											{coin.price_change_percentage_24h < 0 ? '▼ ' : '▲ '}
+										</p>
+										<p className="text-xs lg:text-base">
+											{coin.price_change_percentage_24h.toLocaleString() + '%'}
+										</p>
+									</div>
 								</div>
-								<div className="place-self-end flex items-center h-full pl-4 pr-4 pt-2 pb-2">
+								<div className="text-xs lg:text-base place-self-end flex items-center h-full lg:pl-4 lg:pr-4 lg:pt-2 lg:pb-2">
 									<p>{'$' + coin.market_cap.toLocaleString()}</p>
 								</div>
 							</div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
 	return (
-		<footer className="bg-background2 my-auto pt-20 pb-20 pl-4 pr-4">
+		<footer className="bg-background1 my-auto pt-20 pb-20 pl-4 pr-4">
 			<div className="mx-auto max-w-7xl flex flex-col lg:flex-row gap-12 lg:gap-0 lg:justify-between">
 				<div id="footer-contact" className="flex flex-col gap-4">
 					<h2 className="font-bold text-2xl">Let&apos;s talk!</h2>

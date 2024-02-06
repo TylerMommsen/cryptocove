@@ -1,6 +1,11 @@
 import React from 'react';
 
-export default function PageButtons({ selectedPage, setSelectedPage }) {
+interface PageButtonsProps {
+	selectedPage: number;
+	setSelectedPage: (page: number) => void;
+}
+
+export default function PageButtons({ selectedPage, setSelectedPage }: PageButtonsProps) {
 	const handlePageClick = (page: number) => {
 		setSelectedPage(page);
 	};
