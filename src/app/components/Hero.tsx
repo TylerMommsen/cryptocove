@@ -13,7 +13,7 @@ export default function Hero() {
 						CryptoCove is the easiest, safest, and fastest way to buy and sell crypto asset
 						exchange.
 					</p>
-					<button className="font-bold bg-blue-600 pl-6 pr-6 pt-4 pb-4 rounded-full self-start">
+					<button className="font-bold blue-btn pl-6 pr-6 pt-4 pb-4 rounded-full self-start">
 						Get Started Now
 					</button>
 				</div>

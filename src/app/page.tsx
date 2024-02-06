@@ -3,6 +3,7 @@ import Market from './components/Market';
 import HowItWorks from './components/HowItWorks';
 import WhyUs from './components/WhyUs';
 import Download from './components/Download';
+import OurPartners from './components/OurPartners';
 
 export default function Home() {
 	return (
@@ -11,6 +12,7 @@ export default function Home() {
 			<Market />
 			<HowItWorks />
 			<WhyUs />
+			<OurPartners />
 			<Download />
 		</main>
 	);

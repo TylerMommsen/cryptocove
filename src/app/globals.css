@@ -10,3 +10,16 @@ body {
 	overflow-x: hidden;
 	width: 100vw;
 }
+
+.blue-btn {
+	background-color: rgb(37 99 235);
+	box-shadow: 0 0 20px rgb(37 99 235);
+	transition: 0.5s;
+	transition-property: box-shadow;
+}
+
+.blue-btn:hover {
+	box-shadow: 0 0 5px rgb(37 99 235);
+	box-shadow: 0 0 20px rgb(37 99 235);
+	box-shadow: 0 0 40px rgb(37 99 235);
+}
