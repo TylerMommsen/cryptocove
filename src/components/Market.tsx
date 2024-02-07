@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import PageButtons from './PageButtons';
-import GetMarketData from '../../../lib/GetMarketData';
+import GetMarketData from '../../lib/GetMarketData';
 
 export default function Market() {
 	const [selectedPage, setSelectedPage] = useState<number>(1);
