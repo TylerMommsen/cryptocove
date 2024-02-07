@@ -20,6 +20,15 @@ const config: Config = {
 			screens: {
 				'lg': '992px',
 			},
+			keyframes: {
+				'open-menu': {
+					'0%': { transform: 'scaleY(0)' },
+					'100%': { transform: 'scaleY(1)' },
+				},
+			},
+			animation: {
+				'open-menu': 'open-menu 0.3s ease-in-out forwards',
+			},
 		},
 	},
 	plugins: [],

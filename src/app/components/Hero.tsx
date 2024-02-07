@@ -18,13 +18,9 @@ export default function Hero() {
 					</button>
 				</div>
 
-				<Image
-					src="/PNG/Ethereum.png"
-					width={600}
-					height={600}
-					className="hidden md:block"
-					alt="IDO hero image"
-				/>
+				<div className="hidden md:block animate-bounce-slow">
+					<Image src="/PNG/Ethereum.png" width={600} height={600} alt="IDO hero image" />
+				</div>
 			</div>
 		</section>
 	);

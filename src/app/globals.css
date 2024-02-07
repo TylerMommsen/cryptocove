@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+	.toggle-btn {
+		@apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent;
+	}
+}
+
 html {
 	overflow-x: hidden;
 }
@@ -22,4 +28,19 @@ body {
 	box-shadow: 0 0 5px rgb(37 99 235);
 	box-shadow: 0 0 20px rgb(37 99 235);
 	box-shadow: 0 0 40px rgb(37 99 235);
+}
+
+@keyframes bounce-slow {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-30px);
+	}
+}
+
+.animate-bounce-slow {
+	animation: bounce-slow 2s infinite;
 }
