@@ -5,7 +5,7 @@ export default function Download() {
 	return (
 		<section
 			id="download"
-			className="bg-background2 flex flex-col justify-center items-center pt-16 pb-16 pl-4 pr-4"
+			className="bg-background1 flex flex-col justify-center items-center pt-16 pb-16 pl-4 pr-4"
 		>
 			<div className="mx-auto gap-8 max-w-7xl flex flex-col lg:flex-row justify-center items-center">
 				<div className="flex flex-col">

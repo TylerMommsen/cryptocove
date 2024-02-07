@@ -25,19 +25,19 @@ export default function Header() {
 						<div className="bg-white w-8 h-1 rounded absolute top-4 -mt-0.5 transition-all duration-500 before:content-[''] before:bg-white before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-500 after:content-[''] after:bg-white after:w-8 after:h-1 after:rounded after:absolute after:-translate-x-4 after:translate-y-3 after:transition-all after:duration-500"></div>
 					</button>
 					<nav className="hidden md:block space-x-8 text-xl" aria-label="main">
-						<a href="#home" className="hover:opacity-90 font-bold">
+						<a href="#hero" className="hover:opacity-90">
 							Home
 						</a>
-						<a href="#market" className="hover:opacity-90 font-bold">
+						<a href="#market" className="hover:opacity-90">
 							Market
 						</a>
-						<a href="#how-it-works" className="hover:opacity-90 font-bold">
+						<a href="#how-it-works" className="hover:opacity-90">
 							How It Works
 						</a>
-						<a href="#why-us" className="hover:opacity-90 font-bold">
+						<a href="#why-us" className="hover:opacity-90">
 							Why Us
 						</a>
-						<a href="#download" className="hover:opacity-90 font-bold">
+						<a href="#download" className="hover:opacity-90">
 							Download
 						</a>
 					</nav>

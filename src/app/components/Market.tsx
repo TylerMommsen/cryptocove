@@ -24,11 +24,11 @@ export default function Market() {
 
 	const content = (
 		<>
-			<div className="grid grid-cols-4 w-full pr-4 pl-4">
+			<div className="grid grid-cols-3 lg:grid-cols-4 w-full pr-4 pl-4">
 				<div className="flex place-self-start h-full">
 					<p className="text-center font-bold">Coin</p>
 				</div>
-				<div className="flex place-self-center h-full">
+				<div className="hidden lg:flex place-self-center h-full">
 					<p className="text-center font-bold">Price</p>
 				</div>
 				<div className="flex place-self-center h-full">
@@ -43,15 +43,23 @@ export default function Market() {
 				return (
 					<>
 						<div className="hover:bg-gray-900">
-							<div key={coin.id} className="grid grid-cols-4 w-full">
+							<div key={coin.id} className="grid grid-cols-3 lg:grid-cols-4 w-full">
 								<div className="place-self-start flex gap-2 lg:gap-6 items-center h-full lg:pl-4 lg:pr-4 lg:pt-2 lg:pb-2">
 									<p>{counter}</p>
 									<Image src={coin.image} width={40} height={40} alt="coin image" />
 									<p className="text-center hidden lg:block">{coin.name}</p>
-									<p className="text-textGray text-xs lg:text-base">{coin.symbol.toUpperCase()}</p>
+
+									<div className="flex lg:hidden flex-col gap-1">
+										<p className="text-xs">{coin.name}</p>
+										<p className="text-xs lg:hidden">{'$' + coin.current_price.toLocaleString()}</p>
+									</div>
+
+									<p className="text-textGray text-xs lg:text-base hidden lg:block">
+										{coin.symbol.toUpperCase()}
+									</p>
 								</div>
 
-								<div className="flex place-self-center items-center h-full lg:pl-4 lg:pr-4 lg:pt-2 lg:pb-2">
+								<div className="hidden lg:flex place-self-center items-center h-full lg:pl-4 lg:pr-4 lg:pt-2 lg:pb-2">
 									<p className="text-center text-xs lg:text-base">
 										{'$' + coin.current_price.toLocaleString()}
 									</p>
@@ -85,7 +93,7 @@ export default function Market() {
 	);
 
 	return (
-		<section id="market" className="pt-16 pb-16 pl-4 pr-4 bg-background2">
+		<section id="market" className="relative pt-16 pb-16 pl-4 pr-4 bg-background2 z-40">
 			<div className="mx-auto gap-16 max-w-7xl flex flex-col">
 				<h1 className="font-bold text-4xl md:text-5xl leading-tight text-center mb-6">
 					Market Update

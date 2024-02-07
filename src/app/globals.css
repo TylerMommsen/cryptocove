@@ -17,17 +17,21 @@ body {
 	width: 100vw;
 }
 
-.blue-btn {
-	background-color: rgb(37 99 235);
-	box-shadow: 0 0 20px rgb(37 99 235);
+.primary-btn {
+	background-color: #9485fe;
+	box-shadow: 0 0 20px #9485fe;
 	transition: 0.5s;
 	transition-property: box-shadow;
 }
 
-.blue-btn:hover {
-	box-shadow: 0 0 5px rgb(37 99 235);
-	box-shadow: 0 0 20px rgb(37 99 235);
-	box-shadow: 0 0 40px rgb(37 99 235);
+#market {
+	box-shadow: 0px -40px 40px rgba(20, 20, 22, 1);
+}
+
+.primary-btn:hover {
+	box-shadow: 0 0 5px #9485fe;
+	box-shadow: 0 0 20px #9485fe;
+	box-shadow: 0 0 40px #9485fe;
 }
 
 @keyframes bounce-slow {

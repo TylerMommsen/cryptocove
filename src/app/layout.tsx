@@ -1,15 +1,18 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import GitHubFooter from './components/GitHubFooter';
 
-const inter = Inter({ subsets: ['latin'] });
+const roboto = Roboto({ weight: '400', style: ['normal'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: 'CryptoCove Site',
+	title: 'CryptoCove',
 	description: 'A crypto exchange website.',
+	icons: {
+		icon: '/PNG/icon.ico',
+	},
 };
 
 export default function RootLayout({
@@ -20,7 +23,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${inter.className} text-white bg-black antialiased max-w-screen min-h-screen flex flex-col overflow-x-hidden`}
+				className={`${roboto.className} text-white bg-black antialiased max-w-screen min-h-screen flex flex-col overflow-x-hidden`}
 			>
 				<Header />
 				{children}

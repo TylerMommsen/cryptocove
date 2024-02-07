@@ -17,7 +17,7 @@ export default function PageButtons({ selectedPage, setSelectedPage }: PageButto
 					key={pageNumber}
 					className={`font-bold rounded-full ${
 						selectedPage === pageNumber
-							? 'blue-btn text-white'
+							? 'primary-btn text-white'
 							: 'bg-white hover:bg-gray-200 active:bg-gray-300 text-black'
 					}  pt-2 pb-2 pr-4 pl-4`}
 					onClick={() => handlePageClick(pageNumber)}

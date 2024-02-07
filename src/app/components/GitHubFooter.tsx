@@ -15,7 +15,7 @@ export default function GitHubFooter() {
 
 	return (
 		<div className="bg-black">
-			<div className="mx-auto max-w-7xl text-center pt-4 pb-4">
+			<div className="mx-auto max-w-7xl text-center pt-2 pb-2">
 				Copyright &copy; {currentYear} Tyler Mommsen
 			</div>
 		</div>
