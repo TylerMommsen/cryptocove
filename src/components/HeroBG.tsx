@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from 'react';
 
 export default function HeroBG() {
-	const [gridRows, setGridRows] = useState(Math.floor(window.innerHeight / 120));
-	const [gridCols, setGridCols] = useState(Math.floor(window.innerWidth / 120));
+	const [gridRows, setGridRows] = useState(0);
+	const [gridCols, setGridCols] = useState(0);
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -12,10 +12,18 @@ export default function HeroBG() {
 			setGridCols(Math.floor(window.innerWidth / 120));
 		};
 
+		if (typeof window !== 'undefined') {
+			setGridRows(Math.floor(window.innerHeight / 120));
+			setGridCols(Math.floor(window.innerWidth / 120));
+			window.addEventListener('resize', handleResize);
+		}
+
 		window.addEventListener('resize', handleResize);
 
 		return () => {
-			window.removeEventListener('resize', handleResize);
+			if (typeof window !== 'undefined') {
+				window.removeEventListener('resize', handleResize);
+			}
 		};
 	}, []);
 
