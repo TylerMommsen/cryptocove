@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--primary: #18191d;
+	--secondary: #141416;
+	--tertiary: #9485fe;
+}
+
 @layer utilities {
 	.toggle-btn {
 		@apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent;
@@ -18,22 +24,31 @@ body {
 }
 
 .primary-btn {
-	background-color: #9485fe;
-	box-shadow: 0 0 20px #9485fe;
+	background-color: var(--tertiary);
+	box-shadow: 0 0 10px var(--tertiary);
 	transition: 0.5s;
 	transition-property: box-shadow;
+}
+
+.primary-btn:hover {
+	box-shadow: 0 0 5px var(--tertiary);
+	box-shadow: 0 0 10px var(--tertiary);
+	box-shadow: 0 0 15px var(--tertiary);
+}
+
+#header {
+	box-shadow: 0 10px 15px rgba(20, 20, 22, 1);
 }
 
 #market {
 	box-shadow: 0px -40px 40px rgba(20, 20, 22, 1);
 }
 
-.primary-btn:hover {
-	box-shadow: 0 0 5px #9485fe;
-	box-shadow: 0 0 20px #9485fe;
-	box-shadow: 0 0 40px #9485fe;
+nav > a:hover > div {
+	opacity: 100%;
 }
 
+/* hero page image animation */
 @keyframes bounce-slow {
 	0%,
 	100% {
@@ -47,4 +62,30 @@ body {
 
 .animate-bounce-slow {
 	animation: bounce-slow 2s infinite;
+}
+
+/* Firefox scrollbar */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--tertiary) var(--secondary);
+}
+
+/* Chrome, Edge and safari scrollbar */
+*::-webkit-scrollbar {
+	width: 17px;
+}
+
+*::-webkit-scrollbar-track {
+	background: var(--primary);
+	border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--tertiary);
+	border-radius: 14px;
+	border: 3px solid var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--tertiary);
 }
