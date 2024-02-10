@@ -3,17 +3,11 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
-} from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import SignUpForm from './SignUpForm';
+import LoginForm from './LoginForm';
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -75,7 +69,30 @@ export default function Header() {
 						alt="settings"
 						className="cursor-pointer hidden lg:block hover:rotate-[15deg] duration-100 ease-in-out"
 					/>
-					<button className="text-sm hidden lg:block hover:text-accent duration-100">Login</button>
+
+					<Dialog>
+						<DialogTrigger className="text-sm hidden lg:block hover:text-accent duration-100">
+							Login
+						</DialogTrigger>
+						<DialogContent className="bg-primary2 border-hidden p-10">
+							<Tabs defaultValue="login" className="w-full">
+								<TabsList className="flex gap-6 w-full bg-transparent items-center">
+									<TabsTrigger value="login" className="text-2xl">
+										Login
+									</TabsTrigger>
+									<TabsTrigger value="sign-up" className="text-2xl">
+										Sign Up
+									</TabsTrigger>
+								</TabsList>
+								<TabsContent value="login">
+									<LoginForm />
+								</TabsContent>
+								<TabsContent value="sign-up">
+									<SignUpForm />
+								</TabsContent>
+							</Tabs>
+						</DialogContent>
+					</Dialog>
 
 					<Dialog>
 						<DialogTrigger className="text-sm primary-btn pl-6 pr-6 pt-2 pb-2 rounded-full hidden lg:block">
