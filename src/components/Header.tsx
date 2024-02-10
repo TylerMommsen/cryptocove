@@ -3,6 +3,18 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from '@/components/ui/dialog';
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import SignUpForm from './SignUpForm';
+
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -11,8 +23,8 @@ export default function Header() {
 	};
 
 	return (
-		<header id="header" className="bg-background1 fixed top-0 w-screen z-50">
-			<section className="max-w-[1920px] text-white flex justify-between pt-4 pb-4 pl-6 pr-6 items-center mx-auto">
+		<header id="header" className="bg-primary2 fixed top-0 w-screen z-50">
+			<section className="max-w-[1920px] text-secondary2 flex justify-between pt-4 pb-4 pl-6 pr-6 items-center mx-auto">
 				<div id="header-left" className="flex items-center gap-8 lg:gap-12">
 					<button
 						id="hamburger-button"
@@ -21,29 +33,29 @@ export default function Header() {
 						}`}
 						onClick={toggleMenu}
 					>
-						<div className="bg-white w-8 h-1 rounded absolute top-4 -mt-0.5 transition-all duration-500 before:content-[''] before:bg-white before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-500 after:content-[''] after:bg-white after:w-8 after:h-1 after:rounded after:absolute after:-translate-x-4 after:translate-y-3 after:transition-all after:duration-500"></div>
+						<div className="bg-secondary2 w-8 h-1 rounded absolute top-4 -mt-0.5 transition-all duration-500 before:content-[''] before:bg-secondary2 before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-500 after:content-[''] after:bg-white after:w-8 after:h-1 after:rounded after:absolute after:-translate-x-4 after:translate-y-3 after:transition-all after:duration-500"></div>
 					</button>
 
 					<h1 className="text-xl cursor-pointer">
 						<span className="font-bold">Crypto</span>Cove
 					</h1>
 
-					<nav className="hidden lg:block space-x-8 text-xl" aria-label="main">
-						<a href="#hero" className="text-sm text-textGray relative">
+					<nav className="hidden text-secondary lg:block space-x-8 text-xl" aria-label="main">
+						<a href="#hero" className="text-sm relative">
 							Portfolio Tracker
-							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-tertiary opacity-0 transition-opacity duration-100"></div>
+							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
 						</a>
-						<a href="#market" className="text-sm text-textGray relative">
+						<a href="#market" className="text-sm relative">
 							Swap
-							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-tertiary opacity-0 transition-opacity duration-100"></div>
+							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
 						</a>
-						<a href="#how-it-works" className="text-sm text-textGray relative">
+						<a href="#how-it-works" className="text-sm relative">
 							Buy Crypto
-							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-tertiary opacity-0 transition-opacity duration-100"></div>
+							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
 						</a>
-						<a href="#why-us" className="text-sm text-textGray relative">
+						<a href="#why-us" className="text-sm relative">
 							Cryptocurrencies
-							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-tertiary opacity-0 transition-opacity duration-100"></div>
+							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
 						</a>
 					</nav>
 				</div>
@@ -63,12 +75,30 @@ export default function Header() {
 						alt="settings"
 						className="cursor-pointer hidden lg:block hover:rotate-[15deg] duration-100 ease-in-out"
 					/>
-					<button className="text-sm hidden lg:block hover:text-tertiary duration-100">
-						Login
-					</button>
-					<button className="text-sm primary-btn pl-6 pr-6 pt-2 pb-2 rounded-full hidden lg:block">
-						Get Started
-					</button>
+					<button className="text-sm hidden lg:block hover:text-accent duration-100">Login</button>
+
+					<Dialog>
+						<DialogTrigger className="text-sm primary-btn pl-6 pr-6 pt-2 pb-2 rounded-full hidden lg:block">
+							Get Started
+						</DialogTrigger>
+						<DialogContent className="bg-primary2 border-hidden p-10">
+							<Tabs defaultValue="sign-up" className="w-full">
+								<TabsList className="flex gap-6 w-full bg-transparent items-center">
+									<TabsTrigger value="login" className="text-2xl">
+										Login
+									</TabsTrigger>
+									<TabsTrigger value="sign-up" className="text-2xl">
+										Sign Up
+									</TabsTrigger>
+								</TabsList>
+								<TabsContent value="login">Make changes to your account here.</TabsContent>
+								<TabsContent value="sign-up">
+									<SignUpForm />
+								</TabsContent>
+							</Tabs>
+						</DialogContent>
+					</Dialog>
+
 					<Image
 						src="/PNG/wallet-icon.png"
 						width={0}

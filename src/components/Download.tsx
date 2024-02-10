@@ -5,7 +5,7 @@ export default function Download() {
 	return (
 		<section
 			id="download"
-			className="bg-background1 flex flex-col justify-center items-center pt-16 pb-16 pl-4 pr-4"
+			className="bg-primary2 flex flex-col justify-center items-center pt-16 pb-16 pl-4 pr-4"
 		>
 			<div className="mx-auto gap-8 max-w-7xl flex flex-col lg:flex-row justify-center items-center">
 				<div className="flex flex-col">
@@ -15,7 +15,7 @@ export default function Download() {
 
 					<section className="flex flex-col gap-1 mb-8">
 						<h3 className="font-bold text-xl text-center">Buy & Sell On The Go</h3>
-						<p className="text-textGray text-center">
+						<p className="text-secondary text-center">
 							Manage your holdings from your mobile device.
 						</p>
 					</section>

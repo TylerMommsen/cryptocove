@@ -93,7 +93,7 @@ export default function Market() {
 	);
 
 	return (
-		<section id="market" className="relative pt-16 pb-16 pl-4 pr-4 bg-background2 z-40">
+		<section id="market" className="relative pt-16 pb-16 pl-4 pr-4 bg-primary z-40">
 			<div className="mx-auto gap-16 max-w-7xl flex flex-col">
 				<h1 className="font-bold text-4xl md:text-5xl leading-tight text-center mb-6">
 					Market Update
