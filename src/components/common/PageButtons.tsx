@@ -4,21 +4,25 @@ interface PageButtonsProps {
 	selectedPage: number;
 	setSelectedPage: (page: number) => void;
 	currentMarketSelection: string;
+	isHomePage: boolean;
 }
 
 export default function PageButtons({
 	selectedPage,
 	setSelectedPage,
 	currentMarketSelection,
+	isHomePage,
 }: PageButtonsProps) {
 	const handlePageClick = (page: number) => {
 		setSelectedPage(page);
 	};
 
-	let totalPages;
+	let totalPages = 1;
 	if (currentMarketSelection === 'cryptocurrencies') totalPages = 10;
-	if (currentMarketSelection === 'exchanges') totalPages = 8;
-	if (currentMarketSelection === 'categories') totalPages = 1;
+	else if (currentMarketSelection === 'exchanges') totalPages = 8;
+	else if (currentMarketSelection === 'categories') totalPages = 1;
+
+	if (totalPages > 5 && isHomePage) totalPages = 5;
 
 	return (
 		<div id="market-page-numbers" className="flex flex-row justify-center items-center gap-6">

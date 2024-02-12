@@ -7,55 +7,31 @@ interface CoinMarketProps {
 	isHomePage: boolean;
 }
 
-export default function CoinsMarket({
-	coins,
-	selectedPage,
-	pageItemCount,
-	isHomePage,
-}: CoinMarketProps) {
+export default function CoinsMarket({ coins, selectedPage, pageItemCount }: CoinMarketProps) {
 	return (
 		<>
 			<div className={`grid grid-cols-twoCols md:grid-cols-fiveCols lg:grid-cols-sixCols`}>
-				{isHomePage ? (
-					<>
-						<div className="flex place-self-start h-full">
-							<p className="text-center font-bold">Name</p>
-						</div>
-						<div className="hidden lg:flex place-self-center h-full">
-							<p className="text-center font-bold">Price</p>
-						</div>
-						<div className="flex place-self-center h-full">
-							<p className="text-center font-bold">24h Change</p>
-						</div>
-						<div className="flex place-self-end h-full">
-							<p className="text-center font-bold">Market Cap</p>
-						</div>
-					</>
-				) : (
-					<>
-						<div className="flex place-self-start h-full pr-4 lg:pl-4 lg:pr-4">
-							<p className="text-center text-secondary font-bold">#</p>
-						</div>
-						<div className="flex place-self-start h-full lg:pl-4 lg:pr-4">
-							<p className="text-center font-bold">Name</p>
-						</div>
-						<div className="hidden lg:flex place-self-end h-full lg:pl-4 lg:pr-4">
-							<p className="text-center font-bold">Price</p>
-						</div>
-						<div className="flex place-self-end h-full lg:pl-4 lg:pr-4">
-							<p className="text-center font-bold">24h %</p>
-						</div>
-						<div className="hidden md:flex place-self-end h-full lg:pl-4 lg:pr-4">
-							<p className="text-center font-bold">Total Volume</p>
-						</div>
-						<div className="hidden md:flex place-self-end h-full lg:pl-4 lg:pr-4">
-							<p className="text-center font-bold">Market Cap</p>
-						</div>
-						<div className="hidden md:flex place-self-end h-full lg:pl-4 lg:pr-4">
-							<p className="text-center font-bold">Market Cap 24h %</p>
-						</div>
-					</>
-				)}
+				<div className="flex place-self-start h-full pr-4 lg:pl-4 lg:pr-4">
+					<p className="text-center text-secondary font-bold">#</p>
+				</div>
+				<div className="flex place-self-start h-full lg:pl-4 lg:pr-4">
+					<p className="text-center font-bold">Name</p>
+				</div>
+				<div className="hidden lg:flex place-self-end h-full lg:pl-4 lg:pr-4">
+					<p className="text-center font-bold">Price</p>
+				</div>
+				<div className="flex place-self-end h-full lg:pl-4 lg:pr-4">
+					<p className="text-center font-bold">24h %</p>
+				</div>
+				<div className="hidden md:flex place-self-end h-full lg:pl-4 lg:pr-4">
+					<p className="text-center font-bold">Total Volume</p>
+				</div>
+				<div className="hidden md:flex place-self-end h-full lg:pl-4 lg:pr-4">
+					<p className="text-center font-bold">Market Cap</p>
+				</div>
+				<div className="hidden md:flex place-self-end h-full lg:pl-4 lg:pr-4">
+					<p className="text-center font-bold">Market Cap 24h %</p>
+				</div>
 			</div>
 
 			{coins.map((coin, index) => {

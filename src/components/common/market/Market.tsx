@@ -6,6 +6,7 @@ import ResourceLoader from '../../../lib/ResourceLoader';
 import CoinsMarket from './CoinsMarket';
 import ExchangesMarket from './ExchangesMarket';
 import CategoriesMarket from './CategoriesMarket';
+import Link from 'next/link';
 
 interface MarketProps {
 	isHomePage: boolean;
@@ -23,12 +24,16 @@ export default function Market({ isHomePage }: MarketProps) {
 			try {
 				if (currentMarketSelection === 'cryptocurrencies') {
 					const data = await ResourceLoader(
-						`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=${page}`
+						`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${
+							isHomePage ? '10' : '100'
+						}&page=${page}`
 					);
 					setCoins(data);
 				} else if (currentMarketSelection === 'exchanges') {
 					const data = await ResourceLoader(
-						`https://api.coingecko.com/api/v3/exchanges?vs_currency=usd&order=market_cap_desc&per_page=100&page=${page}`
+						`https://api.coingecko.com/api/v3/exchanges?vs_currency=usd&order=market_cap_desc&per_page=${
+							isHomePage ? '10' : '100'
+						}&page=${page}`
 					);
 					setExchanges(data);
 				} else if (currentMarketSelection === 'categories') {
@@ -43,7 +48,7 @@ export default function Market({ isHomePage }: MarketProps) {
 		};
 
 		fetchData(selectedPage);
-	}, [selectedPage, currentMarketSelection]);
+	}, [selectedPage, currentMarketSelection, isHomePage]);
 
 	useEffect(() => {
 		setSelectedPage(1);
@@ -60,7 +65,7 @@ export default function Market({ isHomePage }: MarketProps) {
 					<CoinsMarket
 						coins={coins}
 						selectedPage={selectedPage}
-						pageItemCount={100}
+						pageItemCount={isHomePage ? 10 : 100}
 						isHomePage={isHomePage}
 					/>
 				</>
@@ -71,7 +76,7 @@ export default function Market({ isHomePage }: MarketProps) {
 					<ExchangesMarket
 						exchanges={exchanges}
 						selectedPage={selectedPage}
-						pageItemCount={100}
+						pageItemCount={isHomePage ? 10 : 100}
 						isHomePage={isHomePage}
 					/>
 				</>
@@ -82,7 +87,7 @@ export default function Market({ isHomePage }: MarketProps) {
 					<CategoriesMarket
 						categories={categories}
 						selectedPage={selectedPage}
-						pageItemCount={100}
+						pageItemCount={isHomePage ? 10 : 100}
 						isHomePage={isHomePage}
 					/>
 				</>
@@ -102,6 +107,13 @@ export default function Market({ isHomePage }: MarketProps) {
 					isHomePage ? 'max-w-7xl' : 'max-w-[1920px]'
 				} max-w-7xl flex flex-col`}
 			>
+				{isHomePage ? (
+					<>
+						<h1 className="font-bold text-4xl md:text-5xl leading-tight text-center">
+							Market Update
+						</h1>
+					</>
+				) : null}
 				<div
 					id="market-btns"
 					className="flex pageItemCount-center justify-center gap-6 md:gap-12 text-secondary"
@@ -147,11 +159,23 @@ export default function Market({ isHomePage }: MarketProps) {
 					{content}
 				</div>
 
-				<PageButtons
-					selectedPage={selectedPage}
-					setSelectedPage={setSelectedPage}
-					currentMarketSelection={currentMarketSelection}
-				/>
+				{isHomePage ? (
+					<>
+						<Link
+							href="/cryptocurrencies"
+							className="primary-btn font-bold pl-6 pr-6 pt-4 pb-4 rounded-full self-center"
+						>
+							See More
+						</Link>
+					</>
+				) : (
+					<PageButtons
+						selectedPage={selectedPage}
+						setSelectedPage={setSelectedPage}
+						currentMarketSelection={currentMarketSelection}
+						isHomePage={isHomePage}
+					/>
+				)}
 			</div>
 		</section>
 	);
