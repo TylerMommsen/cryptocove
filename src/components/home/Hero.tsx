@@ -5,7 +5,8 @@ import HeroBG from './HeroBG';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import SignUpForm from './SignUpForm';
+import SignUpForm from '../common/SignUpForm';
+import LoginForm from '../common/LoginForm';
 
 export default function Hero() {
 	return (
@@ -33,7 +34,9 @@ export default function Hero() {
 										Sign Up
 									</TabsTrigger>
 								</TabsList>
-								<TabsContent value="login">Make changes to your account here.</TabsContent>
+								<TabsContent value="login">
+									<LoginForm />
+								</TabsContent>
 								<TabsContent value="sign-up">
 									<SignUpForm />
 								</TabsContent>

@@ -3,16 +3,26 @@ import React from 'react';
 interface PageButtonsProps {
 	selectedPage: number;
 	setSelectedPage: (page: number) => void;
+	currentMarketSelection: string;
 }
 
-export default function PageButtons({ selectedPage, setSelectedPage }: PageButtonsProps) {
+export default function PageButtons({
+	selectedPage,
+	setSelectedPage,
+	currentMarketSelection,
+}: PageButtonsProps) {
 	const handlePageClick = (page: number) => {
 		setSelectedPage(page);
 	};
 
+	let totalPages;
+	if (currentMarketSelection === 'cryptocurrencies') totalPages = 10;
+	if (currentMarketSelection === 'exchanges') totalPages = 8;
+	if (currentMarketSelection === 'categories') totalPages = 1;
+
 	return (
 		<div id="market-page-numbers" className="flex flex-row justify-center items-center gap-6">
-			{[1, 2, 3, 4, 5].map((pageNumber) => (
+			{Array.from({ length: totalPages || 0 }, (_, index) => index + 1).map((pageNumber) => (
 				<button
 					key={pageNumber}
 					className={`font-bold rounded-full ${

@@ -18,8 +18,17 @@ const config = {
 			},
 		},
 		extend: {
+			gridTemplateColumns: {
+				sevenCols: 'auto repeat(7, minmax(0, 1fr))',
+				sixCols: 'auto repeat(6, minmax(0, 1fr))',
+				fiveCols: 'auto repeat(5, minmax(0, 1fr))',
+				fourCols: 'auto repeat(4, minmax(0, 1fr))',
+				threeCols: 'auto repeat(3, minmax(0, 1fr))',
+				twoCols: 'auto repeat(2, minmax(0, 1fr))',
+			},
 			boxShadow: {
 				inputFocus: '0 0 10px rgba(var(--accent), 1)',
+				marketShadow: '0 -40px 40px rgba(20, 20, 22, 1)',
 			},
 			colors: {
 				border: 'hsl(var(--border))',

@@ -6,8 +6,10 @@ import Image from 'next/image';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import SignUpForm from './SignUpForm';
-import LoginForm from './LoginForm';
+import SignUpForm from '../common/SignUpForm';
+import LoginForm from '../common/LoginForm';
+
+import Link from 'next/link';
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,9 +32,9 @@ export default function Header() {
 						<div className="bg-secondary2 w-8 h-1 rounded absolute top-4 -mt-0.5 transition-all duration-500 before:content-[''] before:bg-secondary2 before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-500 after:content-[''] after:bg-white after:w-8 after:h-1 after:rounded after:absolute after:-translate-x-4 after:translate-y-3 after:transition-all after:duration-500"></div>
 					</button>
 
-					<h1 className="text-xl cursor-pointer">
+					<Link href="/" className="text-xl cursor-pointer">
 						<span className="font-bold">Crypto</span>Cove
-					</h1>
+					</Link>
 
 					<nav className="hidden text-secondary lg:block space-x-8 text-xl" aria-label="main">
 						<a href="#hero" className="text-sm relative">
@@ -47,10 +49,10 @@ export default function Header() {
 							Buy Crypto
 							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
 						</a>
-						<a href="#why-us" className="text-sm relative">
+						<Link href="/cryptocurrencies" className="text-sm relative">
 							Cryptocurrencies
 							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
-						</a>
+						</Link>
 					</nav>
 				</div>
 
@@ -108,7 +110,9 @@ export default function Header() {
 										Sign Up
 									</TabsTrigger>
 								</TabsList>
-								<TabsContent value="login">Make changes to your account here.</TabsContent>
+								<TabsContent value="login">
+									<LoginForm />
+								</TabsContent>
 								<TabsContent value="sign-up">
 									<SignUpForm />
 								</TabsContent>
@@ -151,9 +155,13 @@ export default function Header() {
 					>
 						Buy Crypto
 					</a>
-					<a href="#why-us" className="hover:opacity-90 w-full text-center" onClick={toggleMenu}>
+					<Link
+						href="/cryptocurrencies"
+						className="hover:opacity-90 w-full text-center"
+						onClick={toggleMenu}
+					>
 						Cryptocurrencies
-					</a>
+					</Link>
 				</nav>
 			</section>
 		</header>

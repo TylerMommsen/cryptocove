@@ -109,11 +109,8 @@ body {
 	box-shadow: 0 10px 15px rgba(20, 20, 22, 1);
 }
 
-#market {
-	box-shadow: 0px -40px 40px rgba(20, 20, 22, 1);
-}
-
-nav > a:hover > div {
+nav > a:hover > div,
+#market-btns > button:hover > div {
 	opacity: 100%;
 }
 
