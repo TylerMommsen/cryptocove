@@ -3,13 +3,21 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from '@/components/ui/dialog';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import SignUpForm from '../common/SignUpForm';
 import LoginForm from '../common/LoginForm';
 
 import Link from 'next/link';
+import BuyCryptoForm from '../common/BuyCryptoForm';
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,14 +49,23 @@ export default function Header() {
 							Portfolio Tracker
 							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
 						</a>
-						<a href="#market" className="text-sm relative">
+						<Link href="/swap" className="text-sm relative">
 							Swap
 							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
-						</a>
-						<a href="#how-it-works" className="text-sm relative">
-							Buy Crypto
-							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
-						</a>
+						</Link>
+
+						<Dialog>
+							<DialogTrigger className="text-sm relative">
+								Buy Crypto
+								<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
+							</DialogTrigger>
+							<DialogContent className="bg-primary2 border-hidden p-10">
+								<DialogHeader>
+									<BuyCryptoForm />
+								</DialogHeader>
+							</DialogContent>
+						</Dialog>
+
 						<Link href="/cryptocurrencies" className="text-sm relative">
 							Cryptocurrencies
 							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>

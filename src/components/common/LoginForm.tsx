@@ -46,7 +46,7 @@ export default function LoginForm() {
 								<FormLabel>Email</FormLabel>
 								<FormControl>
 									<Input
-										className="border-transparent focus-visible:shadow-none"
+										className="border-hidden focus-visible:shadow-none"
 										placeholder="Email"
 										type="email"
 										{...field}
