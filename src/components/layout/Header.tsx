@@ -12,12 +12,22 @@ import {
 	DialogTrigger,
 } from '@/components/ui/dialog';
 
+import {
+	Sheet,
+	SheetContent,
+	SheetDescription,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
+} from '@/components/ui/sheet';
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import SignUpForm from '../common/SignUpForm';
 import LoginForm from '../common/LoginForm';
 
 import Link from 'next/link';
 import BuyCryptoForm from '../common/BuyCryptoForm';
+import SidebarPopup from '../common/SidebarPopup';
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -137,15 +147,22 @@ export default function Header() {
 						</DialogContent>
 					</Dialog>
 
-					<Image
-						src="/PNG/wallet-icon.png"
-						width={0}
-						height={0}
-						alt="wallet icon"
-						sizes="100vw"
-						style={{ width: '32px', height: '32px' }}
-						className="cursor-pointer"
-					></Image>
+					<Sheet>
+						<SheetTrigger>
+							<Image
+								src="/PNG/wallet-icon.png"
+								width={0}
+								height={0}
+								alt="wallet icon"
+								sizes="100vw"
+								style={{ width: '32px', height: '32px' }}
+								className="cursor-pointer"
+							></Image>
+						</SheetTrigger>
+						<SheetContent className="border-none">
+							<SidebarPopup />
+						</SheetContent>
+					</Sheet>
 				</div>
 			</section>
 

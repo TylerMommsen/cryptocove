@@ -31,7 +31,8 @@
 		--destructive-foreground: 0 0% 98%;
 
 		--border: 0 0% 89.8%;
-		--input: 0 0% 89.8%;
+		--input: rgb(36, 36, 40);
+		--inputHover: rgb(51, 51, 56);
 		--ring: #9485fe;
 
 		--radius: 0.5rem;

@@ -1,3 +1,6 @@
+import SidebarPopup from '@/components/common/SidebarPopup';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+
 export default function Swap() {
 	return (
 		<main className="mx-auto flex-grow w-full">
@@ -6,7 +9,14 @@ export default function Swap() {
 				<div className="flex flex-col gap-8 w-1/4 bg-primary2 p-8 rounded-2xl">
 					<button className="flex text-secondary justify-between items-center w-full rounded-2xl border-input bg-background px-4 py-3 text-sm">
 						Connect Your Wallet
-						<button className="primary-btn px-6 py-2 rounded-full text-secondary2">Connect</button>
+						<Sheet>
+							<SheetTrigger className="primary-btn px-6 py-2 rounded-full text-secondary2">
+								Connect
+							</SheetTrigger>
+							<SheetContent className="border-none">
+								<SidebarPopup />
+							</SheetContent>
+						</Sheet>
 					</button>
 
 					<div className="w-full bg-primary flex flex-col px-4 py-3 rounded-2xl">

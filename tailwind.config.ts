@@ -32,7 +32,8 @@ const config = {
 			},
 			colors: {
 				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
+				input: 'var(--input)',
+				inputHover: 'var(--inputHover)',
 				ring: 'var(--ring)',
 				background: 'var(--primary)',
 				foreground: 'var(--secondary2)',

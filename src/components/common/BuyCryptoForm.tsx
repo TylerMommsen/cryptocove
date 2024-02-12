@@ -1,4 +1,7 @@
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+
 import React from 'react';
+import SidebarPopup from './SidebarPopup';
 
 export default function BuyCryptoForm() {
 	return (
@@ -7,7 +10,14 @@ export default function BuyCryptoForm() {
 			<p className="text-secondary">Deposit to</p>
 			<button className="mb-4 flex text-secondary justify-between items-center rounded-2xl border-input bg-background px-4 py-3 text-sm">
 				Connect Your Wallet
-				<button className="primary-btn px-6 py-2 rounded-full text-secondary2">Connect</button>
+				<Sheet>
+					<SheetTrigger className="primary-btn px-6 py-2 rounded-full text-secondary2">
+						Connect
+					</SheetTrigger>
+					<SheetContent className="border-none">
+						<SidebarPopup />
+					</SheetContent>
+				</Sheet>
 			</button>
 			<button className="primary-btn self-center px-6 py-4 rounded-full">Submit</button>
 		</div>
