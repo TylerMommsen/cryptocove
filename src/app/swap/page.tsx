@@ -6,7 +6,7 @@ export default function Swap() {
 		<main className="mx-auto flex-grow w-full">
 			<div className="flex flex-col justify-center items-center pt-32 pb-16 bg-primary">
 				<h1 className="font-bold text-4xl md:text-5xl leading-tight text-center mb-6">Swap</h1>
-				<div className="flex flex-col gap-8 w-1/4 bg-primary2 p-8 rounded-2xl">
+				<div className="flex flex-col gap-8 w-[340px] md:w-[460px] bg-primary2 p-8 rounded-2xl">
 					<button className="flex text-secondary justify-between items-center w-full rounded-2xl border-input bg-background px-4 py-3 text-sm">
 						Connect Your Wallet
 						<Sheet>
@@ -36,7 +36,7 @@ export default function Swap() {
 
 						<div className="flex items-center">
 							<hr className="w-full" />
-							<p>/</p>
+							<p className="px-3 py-1 border rounded-full">&#x2193;</p>
 							<hr className="w-full" />
 						</div>
 
