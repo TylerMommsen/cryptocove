@@ -1,5 +1,6 @@
 import SidebarPopup from '@/components/common/SidebarPopup';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import Image from 'next/image';
 
 export default function Swap() {
 	return (
@@ -25,7 +26,7 @@ export default function Swap() {
 							<div className="flex justify-between items-center">
 								<button className="flex justify-between items-center gap-2 bg-primary2 rounded-2xl px-4 py-2 h-auto">
 									Select Coin
-									<p className="text-2xl">&#x2193;</p>
+									<Image src="/PNG/arrow-icon.png" width={16} height={16} alt="arrow icon" />
 								</button>
 								<div className="flex flex-col gap-2 items-end">
 									<p className="text-2xl">0</p>
@@ -36,7 +37,9 @@ export default function Swap() {
 
 						<div className="flex items-center">
 							<hr className="w-full" />
-							<p className="px-3 py-1 border rounded-full">&#x2193;</p>
+							<div className="p-2 border rounded-full rotate-90">
+								<Image src="/PNG/arrow-icon.png" width={32} height={32} alt="arrow icon" />
+							</div>
 							<hr className="w-full" />
 						</div>
 
@@ -45,7 +48,7 @@ export default function Swap() {
 							<div className="flex justify-between items-center">
 								<button className="flex justify-between items-center gap-2 bg-primary2 rounded-2xl py-2 px-4">
 									Select Coin
-									<p className="text-2xl">&#x2193;</p>
+									<Image src="/PNG/arrow-icon.png" width={16} height={16} alt="arrow icon" />
 								</button>
 								<div className="flex flex-col gap-2 items-end">
 									<p className="text-2xl">0</p>

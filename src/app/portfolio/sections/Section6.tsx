@@ -1,15 +1,16 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function Section6() {
 	return (
 		<section className="px-4 py-16 flex flex-col bg-primary2 justify-center w-screen">
-			<div className="mx-auto max-w-7xl flex flex-col lg:grid lg:grid-cols-2 gap-6 items-center">
+			<div className="mx-auto max-w-7xl flex flex-col lg:grid lg:grid-cols-2 place-items-center gap-6 items-center">
 				<div className="flex flex-col gap-6">
 					<h1 className="font-bold text-2xl">Swap With Best Rates</h1>
 					<p className="text-secondary">
 						Swap your crypto assets without leaving the app and catch all the trending coins. We go
 						above and beyond to give you the easiest and most user-centric swapping experience on
-						the market. On CoinStats, you&apos;re maximizing liquidity and optimizing your swapping
+						the market. On CryptoCove, you&apos;re maximizing liquidity and optimizing your swapping
 						automatically.
 					</p>
 
@@ -26,7 +27,7 @@ export default function Section6() {
 
 					<button className="primary-btn px-6 py-4 rounded-full self-start">Start Swapping</button>
 				</div>
-				<p>Placeholder</p>
+				<Image src="/PNG/section6-img.svg" width={800} height={800} alt={'section 6 image'} />
 			</div>
 		</section>
 	);

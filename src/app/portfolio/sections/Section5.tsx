@@ -1,10 +1,17 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function Section5() {
 	return (
 		<section className="px-4 py-16 flex flex-col bg-primary justify-center w-screen">
-			<div className="mx-auto max-w-7xl flex flex-col lg:grid lg:grid-cols-2 gap-6 items-center">
-				<p>Placeholder</p>
+			<div className="mx-auto max-w-7xl flex flex-col lg:grid lg:grid-cols-2 place-items-center gap-6 items-center">
+				<Image
+					src="/PNG/section5-img.svg"
+					width={600}
+					height={600}
+					alt="section 5 image"
+					className="scale-[125%]"
+				/>
 				<div className="flex flex-col gap-6">
 					<h1 className="font-bold text-2xl">Your Portfolio Vs The Market</h1>
 					<p className="text-secondary">
