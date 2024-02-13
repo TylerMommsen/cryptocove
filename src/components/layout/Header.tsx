@@ -55,10 +55,11 @@ export default function Header() {
 					</Link>
 
 					<nav className="hidden text-secondary lg:block space-x-8 text-xl" aria-label="main">
-						<a href="#hero" className="text-sm relative">
+						<Link href="/portfolio" className="text-sm relative">
 							Portfolio Tracker
 							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
-						</a>
+						</Link>
+
 						<Link href="/swap" className="text-sm relative">
 							Swap
 							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
