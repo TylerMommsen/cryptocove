@@ -3,23 +3,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
-} from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTrigger } from '@/components/ui/dialog';
 
-import {
-	Sheet,
-	SheetContent,
-	SheetDescription,
-	SheetHeader,
-	SheetTitle,
-	SheetTrigger,
-} from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import SignUpForm from '../common/SignUpForm';
@@ -169,7 +155,7 @@ export default function Header() {
 
 			<section
 				id="mobile-menu"
-				className={`absolute left-0 top-70 bg-background2 origin-top animate-open-menu w-screen text-4xl flex-col justify-center ${
+				className={`absolute left-0 top-70 bg-primary origin-top animate-open-menu w-screen text-4xl flex-col justify-center ${
 					isMenuOpen ? 'flex' : 'hidden'
 				}`}
 			>
@@ -177,19 +163,29 @@ export default function Header() {
 					className="flex flex-col gap-14 min-h-screen w-screen items-center py-16"
 					aria-label="mobile"
 				>
-					<a href="#hero" className="hover:opacity-90 w-full text-center" onClick={toggleMenu}>
-						Portfolio Tracker
-					</a>
-					<a href="#market" className="hover:opacity-90 w-full text-center" onClick={toggleMenu}>
-						Swap
-					</a>
-					<a
-						href="#how-it-works"
+					<Link
+						href="/portfolio"
 						className="hover:opacity-90 w-full text-center"
 						onClick={toggleMenu}
 					>
-						Buy Crypto
-					</a>
+						Portfolio Tracker
+					</Link>
+
+					<Link href="/swap" className="hover:opacity-90 w-full text-center" onClick={toggleMenu}>
+						Swap
+					</Link>
+
+					<Dialog>
+						<DialogTrigger className="hover:opacity-90 w-full text-center" onClick={toggleMenu}>
+							Buy Crypto
+						</DialogTrigger>
+						<DialogContent className="bg-primary2 border-hidden p-10">
+							<DialogHeader>
+								<BuyCryptoForm />
+							</DialogHeader>
+						</DialogContent>
+					</Dialog>
+
 					<Link
 						href="/cryptocurrencies"
 						className="hover:opacity-90 w-full text-center"
