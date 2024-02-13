@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import OpenSideBarBtn from '@/components/common/OpenSideBarBtn';
 
 export default function Section5() {
 	return (
@@ -24,9 +25,10 @@ export default function Section5() {
 						up in terms of volatility, or make the necessary changes to enhance performance.
 					</p>
 
-					<button className="primary-btn px-6 py-4 rounded-full self-start">
-						Check Comparison
-					</button>
+					<OpenSideBarBtn
+						ButtonText="Check Comparison"
+						ClassNames="primary-btn px-6 py-4 rounded-full self-start mb-4"
+					/>
 				</div>
 			</div>
 		</section>

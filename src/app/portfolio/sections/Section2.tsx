@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import OpenSideBarBtn from '@/components/common/OpenSideBarBtn';
 
 export default function Section2() {
 	return (
@@ -21,9 +22,10 @@ export default function Section2() {
 						decision-making and grow your crypto faster.
 					</p>
 
-					<button className="primary-btn px-6 py-4 rounded-full self-start">
-						Connect Portfolio Now
-					</button>
+					<OpenSideBarBtn
+						ButtonText="Track Now"
+						ClassNames="primary-btn px-6 py-4 rounded-full self-start mb-4"
+					/>
 				</div>
 				<Image src="/PNG/section2-img.png" width={500} height={500} alt="section 2 image" />
 			</div>

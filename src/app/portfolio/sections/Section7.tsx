@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewCard from '../ReviewCard';
+import OpenSideBarBtn from '@/components/common/OpenSideBarBtn';
 
 export default function Section7() {
 	return (
@@ -24,9 +25,10 @@ export default function Section7() {
 					/>
 				</div>
 
-				<button className="primary-btn px-6 py-4 rounded-full self-start lg:self-center">
-					Connect Portfolio
-				</button>
+				<OpenSideBarBtn
+					ButtonText="Connect Portfolio"
+					ClassNames="primary-btn px-6 py-4 rounded-full self-start mb-4 self-center"
+				/>
 			</div>
 		</section>
 	);

@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import OpenSideBarBtn from '@/components/common/OpenSideBarBtn';
 
 export default function Section3() {
 	return (
@@ -41,9 +42,10 @@ export default function Section3() {
 						</div>
 					</div>
 
-					<button className="primary-btn px-6 py-4 rounded-full self-start">
-						Connect Portfolio Now
-					</button>
+					<OpenSideBarBtn
+						ButtonText="Connect Portfolio"
+						ClassNames="primary-btn px-6 py-4 rounded-full self-start mb-4 z-10"
+					/>
 				</div>
 			</div>
 		</section>

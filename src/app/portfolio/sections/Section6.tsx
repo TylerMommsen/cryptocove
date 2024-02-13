@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import OpenSideBarBtn from '@/components/common/OpenSideBarBtn';
 
 export default function Section6() {
 	return (
@@ -25,7 +26,10 @@ export default function Section6() {
 						to swap one coin for another and maximize convenience of crypto transactions.
 					</p>
 
-					<button className="primary-btn px-6 py-4 rounded-full self-start">Start Swapping</button>
+					<OpenSideBarBtn
+						ButtonText="Start Swapping"
+						ClassNames="primary-btn px-6 py-4 rounded-full self-start mb-4"
+					/>
 				</div>
 				<Image src="/PNG/section6-img.svg" width={800} height={800} alt={'section 6 image'} />
 			</div>
