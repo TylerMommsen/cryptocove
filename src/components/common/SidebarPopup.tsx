@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 export default function SidebarPopup() {
@@ -13,36 +14,36 @@ export default function SidebarPopup() {
 			</div>
 
 			<div className="flex flex-col gap-6">
-				<button className="flex justify-between bg-input hover:bg-inputHover rounded-2xl px-4 py-4">
-					<div className="flex gap-4">
-						<p>Placeholder</p>
+				<button className="flex justify-between items-center bg-input hover:bg-inputHover rounded-2xl px-4 py-4">
+					<div className="flex gap-4 items-center">
+						<Image src="/PNG/binance-icon.png" width={32} height={32} alt="binance icon" />
 						<p>Binance</p>
 					</div>
-					<p>{'>'}</p>
+					<Image src="/PNG/arrow-icon.png" width={24} height={24} alt="arrow icon" />
 				</button>
 
-				<button className="flex justify-between bg-input hover:bg-inputHover rounded-2xl px-4 py-4">
-					<div className="flex gap-4">
-						<p>Placeholder</p>
+				<button className="flex justify-between items-center bg-input hover:bg-inputHover rounded-2xl px-4 py-4">
+					<div className="flex gap-4 items-center">
+						<Image src="/PNG/metamask-icon.png" width={32} height={32} alt="metamask icon" />
 						<p>MetaMask</p>
 					</div>
-					<p>{'>'}</p>
+					<Image src="/PNG/arrow-icon.png" width={24} height={24} alt="arrow icon" />
 				</button>
 
-				<button className="flex justify-between bg-input hover:bg-inputHover rounded-2xl px-4 py-4">
-					<div className="flex gap-4">
-						<p>Placeholder</p>
+				<button className="flex justify-between items-center bg-input hover:bg-inputHover rounded-2xl px-4 py-4">
+					<div className="flex gap-4 items-center">
+						<Image src="/PNG/coinbase-icon.png" width={32} height={32} alt="coinbase icon" />
 						<p>Coinbase</p>
 					</div>
-					<p>{'>'}</p>
+					<Image src="/PNG/arrow-icon.png" width={24} height={24} alt="arrow icon" />
 				</button>
 
-				<button className="flex justify-between bg-input hover:bg-inputHover rounded-2xl px-4 py-4">
-					<div className="flex gap-4">
-						<p>Placeholder</p>
+				<button className="flex justify-between items-center bg-input hover:bg-inputHover rounded-2xl px-4 py-4">
+					<div className="flex gap-4 items-center">
+						<Image src="/PNG/allwallets-icon.svg" width={32} height={32} alt="allwallets icon" />
 						<p>Connect Other</p>
 					</div>
-					<p>{'>'}</p>
+					<Image src="/PNG/arrow-icon.png" width={24} height={24} alt="arrow icon" />
 				</button>
 			</div>
 		</>
