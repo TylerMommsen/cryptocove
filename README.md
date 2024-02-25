@@ -29,7 +29,7 @@ Follow these steps to run the project locally.
   git clone git@github.com:TylerMommsen/cryptocove.git
   ```
 
-2. Install dependenices
+2. Install dependencies
   ```sh
   npm install
   ```
