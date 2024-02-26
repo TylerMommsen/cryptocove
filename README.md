@@ -16,6 +16,14 @@ CryptoCove is a mockup crypto website that provides users with up-to-date inform
   </br>
 </div>
 
+## Screenshots
+![CryptoCove1Full](https://github.com/TylerMommsen/cryptocove/assets/65496518/568cc8bc-2233-44ee-83c6-7e5f4a9d6544)
+![CryptoCove2Full](https://github.com/TylerMommsen/cryptocove/assets/65496518/d6083a90-b884-4f66-9ca2-ff01b64f1c2b)
+![CryptoCove3Full](https://github.com/TylerMommsen/cryptocove/assets/65496518/ad46bd76-0bf0-42fd-b87a-9a2ffd30e8d7)
+![CryptoCove4](https://github.com/TylerMommsen/cryptocove/assets/65496518/dbe4f6cd-afb4-4cf2-8dc7-06b045650506)
+![CryptoCove5](https://github.com/TylerMommsen/cryptocove/assets/65496518/9b927d1d-a227-46b7-b82f-27af340df844)
+
+
 ## Development
 Follow these steps to run the project locally.
 1. Clone the repository.
