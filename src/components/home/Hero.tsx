@@ -1,17 +1,20 @@
 import React from 'react';
 import Image from 'next/image';
-import HeroBG from './HeroBG';
 
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import SignUpForm from '../common/SignUpForm';
 import LoginForm from '../common/LoginForm';
+import { BackgroundBeams } from '../ui/background-beams';
 
 export default function Hero() {
 	return (
-		<section id="hero" className="p-4 flex justify-center min-h-screen w-screen bg-primary">
-			<HeroBG />
+		<section
+			id="hero"
+			className="relative p-4 flex justify-center min-h-screen w-screen bg-primary"
+		>
+			<BackgroundBeams />
 			<div className="mx-auto max-w-7xl flex flex-row justify-between items-center">
 				<div id="hero-text" className="flex flex-col gap-8 z-40">
 					<h1 className="font-[800] text-4xl md:text-[46px] leading-tight md:leading-[60px]">
