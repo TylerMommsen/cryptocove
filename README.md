@@ -1,8 +1,8 @@
 # CryptoCove
 CryptoCove is a mockup crypto website that provides users with up-to-date information on the latest crypto assets in real-time such as price, market cap and 24hr percentage change using CoinGecko's API. Built with React, TypeScript and Tailwind.
 
-## Demo
-[Live](https://tylermommsen-cryptocove.vercel.app/)
+## Live Demo
+[View Live Site Here](https://tylermommsen-cryptocove.vercel.app/)
 
 ## Built With
 <div>
