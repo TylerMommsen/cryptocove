@@ -17,15 +17,16 @@ CryptoCove is a mockup crypto website that provides users with up-to-date inform
   </br>
   <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="tailwind icon">
   </br>
+  <img src="https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white" alt="three.js icon">
+  </br>
 </div>
 
 ## Screenshots
 
-![CryptoCove1Full](https://github.com/TylerMommsen/cryptocove/assets/65496518/568cc8bc-2233-44ee-83c6-7e5f4a9d6544)
-![CryptoCove2Full](https://github.com/TylerMommsen/cryptocove/assets/65496518/d6083a90-b884-4f66-9ca2-ff01b64f1c2b)
-![CryptoCove3Full](https://github.com/TylerMommsen/cryptocove/assets/65496518/ad46bd76-0bf0-42fd-b87a-9a2ffd30e8d7)
-![CryptoCove4](https://github.com/TylerMommsen/cryptocove/assets/65496518/dbe4f6cd-afb4-4cf2-8dc7-06b045650506)
-![CryptoCove5](https://github.com/TylerMommsen/cryptocove/assets/65496518/9b927d1d-a227-46b7-b82f-27af340df844)
+![cryptocovepreview1](https://github.com/TylerMommsen/cryptocove/assets/65496518/664992df-b4b1-4544-9d91-0cd6ae5d257c)
+![cryptocovepreview2](https://github.com/TylerMommsen/cryptocove/assets/65496518/2429f537-e7b5-4fb0-bfb6-ad157cc77825)
+![cryptocovepreview3](https://github.com/TylerMommsen/cryptocove/assets/65496518/7c44d2be-2562-4ec0-91c0-b5ef1fab33c0)
+![cryptocovepreview4](https://github.com/TylerMommsen/cryptocove/assets/65496518/dcd396e1-bb29-4fbb-ad2c-3f80a923a02d)
 
 ## Development
 
