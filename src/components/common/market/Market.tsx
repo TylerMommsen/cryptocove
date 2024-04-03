@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import PageButtons from '../PageButtons';
-import ResourceLoader from '../../../lib/ResourceLoader';
-import CoinsMarket from './CoinsMarket';
-import ExchangesMarket from './ExchangesMarket';
-import CategoriesMarket from './CategoriesMarket';
-import Link from 'next/link';
+import React, { useEffect, useState } from "react";
+import PageButtons from "../PageButtons";
+import ResourceLoader from "../../../lib/ResourceLoader";
+import CoinsMarket from "./CoinsMarket";
+import ExchangesMarket from "./ExchangesMarket";
+import CategoriesMarket from "./CategoriesMarket";
+import Link from "next/link";
 
 interface MarketProps {
 	isHomePage: boolean;
 }
 
 export default function Market({ isHomePage }: MarketProps) {
-	const [currentMarketSelection, setCurrentMarketSelection] = useState('cryptocurrencies');
+	const [currentMarketSelection, setCurrentMarketSelection] = useState("cryptocurrencies");
 	const [selectedPage, setSelectedPage] = useState<number>(1);
 	const [coins, setCoins] = useState<MarketCoin[]>([]);
 	const [exchanges, setExchanges] = useState<Exchange[]>([]);
@@ -22,28 +22,28 @@ export default function Market({ isHomePage }: MarketProps) {
 	useEffect(() => {
 		const fetchData = async (page: number) => {
 			try {
-				if (currentMarketSelection === 'cryptocurrencies') {
+				if (currentMarketSelection === "cryptocurrencies") {
 					const data = await ResourceLoader(
 						`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${
-							isHomePage ? '10' : '100'
+							isHomePage ? "10" : "100"
 						}&page=${page}`
 					);
 					setCoins(data);
-				} else if (currentMarketSelection === 'exchanges') {
+				} else if (currentMarketSelection === "exchanges") {
 					const data = await ResourceLoader(
 						`https://api.coingecko.com/api/v3/exchanges?vs_currency=usd&order=market_cap_desc&per_page=${
-							isHomePage ? '10' : '100'
+							isHomePage ? "10" : "100"
 						}&page=${page}`
 					);
 					setExchanges(data);
-				} else if (currentMarketSelection === 'categories') {
+				} else if (currentMarketSelection === "categories") {
 					const data = await ResourceLoader(
 						`https://api.coingecko.com/api/v3/coins/categories?vs_currency=usd&order=market_cap_desc`
 					);
 					setCategories(data);
 				}
 			} catch (error) {
-				console.error('Failed to fetch market data', error);
+				console.error("Failed to fetch market data", error);
 			}
 		};
 
@@ -60,7 +60,7 @@ export default function Market({ isHomePage }: MarketProps) {
 
 	const content = (
 		<>
-			{currentMarketSelection === 'cryptocurrencies' ? (
+			{currentMarketSelection === "cryptocurrencies" ? (
 				<>
 					<CoinsMarket
 						coins={coins}
@@ -71,7 +71,7 @@ export default function Market({ isHomePage }: MarketProps) {
 				</>
 			) : null}
 
-			{currentMarketSelection === 'exchanges' ? (
+			{currentMarketSelection === "exchanges" ? (
 				<>
 					<ExchangesMarket
 						exchanges={exchanges}
@@ -82,7 +82,7 @@ export default function Market({ isHomePage }: MarketProps) {
 				</>
 			) : null}
 
-			{currentMarketSelection === 'categories' ? (
+			{currentMarketSelection === "categories" ? (
 				<>
 					<CategoriesMarket
 						categories={categories}
@@ -99,12 +99,12 @@ export default function Market({ isHomePage }: MarketProps) {
 		<section
 			id="market"
 			className={`relative pt-16 pb-16 pl-4 pr-4 bg-primary z-40 w-full ${
-				isHomePage ? 'shadow-marketShadow' : null
+				isHomePage ? "shadow-marketShadow" : null
 			}`}
 		>
 			<div
 				className={`mx-auto gap-16 ${
-					isHomePage ? 'max-w-7xl' : 'max-w-[1920px]'
+					isHomePage ? "max-w-7xl" : "max-w-[1920px]"
 				} max-w-7xl flex flex-col`}
 			>
 				{isHomePage ? (
@@ -125,7 +125,7 @@ export default function Market({ isHomePage }: MarketProps) {
 						Cryptocurrencies
 						<div
 							className={`absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent ${
-								currentMarketSelection === 'cryptocurrencies' ? 'opacity-100' : 'opacity-0'
+								currentMarketSelection === "cryptocurrencies" ? "opacity-100" : "opacity-0"
 							} transition-opacity duration-100`}
 						></div>
 					</button>
@@ -137,7 +137,7 @@ export default function Market({ isHomePage }: MarketProps) {
 						Exchanges
 						<div
 							className={`absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent ${
-								currentMarketSelection === 'exchanges' ? 'opacity-100' : 'opacity-0'
+								currentMarketSelection === "exchanges" ? "opacity-100" : "opacity-0"
 							} transition-opacity duration-100`}
 						></div>
 					</button>
@@ -149,7 +149,7 @@ export default function Market({ isHomePage }: MarketProps) {
 						Categories
 						<div
 							className={`absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent ${
-								currentMarketSelection === 'categories' ? 'opacity-100' : 'opacity-0'
+								currentMarketSelection === "categories" ? "opacity-100" : "opacity-0"
 							} transition-opacity duration-100`}
 						></div>
 					</button>

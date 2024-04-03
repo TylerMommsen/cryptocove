@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Image from "next/image";
 
-import { Dialog, DialogContent, DialogHeader, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "@/components/ui/dialog";
 
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import SignUpForm from '../common/SignUpForm';
-import LoginForm from '../common/LoginForm';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import SignUpForm from "../common/SignUpForm";
+import LoginForm from "../common/LoginForm";
 
-import Link from 'next/link';
-import BuyCryptoForm from '../common/BuyCryptoForm';
-import SidebarPopup from '../common/SidebarPopup';
+import Link from "next/link";
+import BuyCryptoForm from "../common/BuyCryptoForm";
+import SidebarPopup from "../common/SidebarPopup";
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,7 +29,7 @@ export default function Header() {
 					<button
 						id="hamburger-button"
 						className={`text-3xl lg:hidden focus:outline-none relative w-8 h-8 ${
-							isMenuOpen ? 'toggle-btn' : ''
+							isMenuOpen ? "toggle-btn" : ""
 						}`}
 						onClick={toggleMenu}
 					>
@@ -41,20 +41,20 @@ export default function Header() {
 					</Link>
 
 					<nav className="hidden text-secondary lg:block space-x-8 text-xl" aria-label="main">
-						<Link href="/portfolio" className="text-sm relative">
+						<Link href="/portfolio" className="text-sm relative group">
 							Portfolio Tracker
-							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
+							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100 group-hover:opacity-100"></div>
 						</Link>
 
-						<Link href="/swap" className="text-sm relative">
+						<Link href="/swap" className="text-sm relative group">
 							Swap
-							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
+							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100 group-hover:opacity-100"></div>
 						</Link>
 
 						<Dialog>
-							<DialogTrigger className="text-sm relative">
+							<DialogTrigger className="text-sm relative group">
 								Buy Crypto
-								<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
+								<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100 group-hover:opacity-100"></div>
 							</DialogTrigger>
 							<DialogContent className="bg-primary2 border-hidden p-10">
 								<DialogHeader>
@@ -63,9 +63,9 @@ export default function Header() {
 							</DialogContent>
 						</Dialog>
 
-						<Link href="/cryptocurrencies" className="text-sm relative">
+						<Link href="/cryptocurrencies" className="text-sm relative group">
 							Cryptocurrencies
-							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100"></div>
+							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100 group-hover:opacity-100"></div>
 						</Link>
 					</nav>
 				</div>
@@ -142,7 +142,7 @@ export default function Header() {
 								height={0}
 								alt="wallet icon"
 								sizes="100vw"
-								style={{ width: '32px', height: '32px' }}
+								style={{ width: "32px", height: "32px" }}
 								className="cursor-pointer"
 							></Image>
 						</SheetTrigger>
@@ -156,7 +156,7 @@ export default function Header() {
 			<section
 				id="mobile-menu"
 				className={`absolute left-0 top-70 bg-primary origin-top animate-open-menu w-screen text-4xl flex-col justify-center ${
-					isMenuOpen ? 'flex' : 'hidden'
+					isMenuOpen ? "flex" : "hidden"
 				}`}
 			>
 				<nav

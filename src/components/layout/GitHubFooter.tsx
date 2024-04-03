@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 export default function GitHubFooter() {
 	const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -16,7 +16,7 @@ export default function GitHubFooter() {
 	return (
 		<div className="bg-black">
 			<div className="mx-auto max-w-7xl text-center pt-2 pb-2">
-				Copyright &copy; {currentYear} Tyler Mommsen
+				&copy; {currentYear} Tyler Mommsen
 			</div>
 		</div>
 	);
