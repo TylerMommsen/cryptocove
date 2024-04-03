@@ -43,18 +43,18 @@ export default function Header() {
 					<nav className="hidden text-secondary lg:block space-x-8 text-xl" aria-label="main">
 						<Link href="/portfolio" className="text-sm relative group">
 							Portfolio Tracker
-							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100 group-hover:opacity-100"></div>
+							<div className="absolute bottom-0 top-[36px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100 group-hover:opacity-100"></div>
 						</Link>
 
 						<Link href="/swap" className="text-sm relative group">
 							Swap
-							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100 group-hover:opacity-100"></div>
+							<div className="absolute bottom-0 top-[36px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100 group-hover:opacity-100"></div>
 						</Link>
 
 						<Dialog>
 							<DialogTrigger className="text-sm relative group">
 								Buy Crypto
-								<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100 group-hover:opacity-100"></div>
+								<div className="absolute bottom-0 top-[36px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100 group-hover:opacity-100"></div>
 							</DialogTrigger>
 							<DialogContent className="bg-primary2 border-hidden p-10">
 								<DialogHeader>
@@ -65,7 +65,7 @@ export default function Header() {
 
 						<Link href="/cryptocurrencies" className="text-sm relative group">
 							Cryptocurrencies
-							<div className="absolute bottom-0 top-[34px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100 group-hover:opacity-100"></div>
+							<div className="absolute bottom-0 top-[36px] left-0 w-full h-1 bg-accent opacity-0 transition-opacity duration-100 group-hover:opacity-100"></div>
 						</Link>
 					</nav>
 				</div>
