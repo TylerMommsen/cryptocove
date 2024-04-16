@@ -10,6 +10,7 @@ import LoginForm from "../common/LoginForm";
 import Hero3DModel from "../common/Hero3DModel";
 import { Canvas } from "@react-three/fiber";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
+import HeroBG from "../ui/hero-bg";
 
 export default function Hero() {
 	const [canvasSize, setCanvasSize] = useState({ width: "250px", height: "300px" });
@@ -38,11 +39,13 @@ export default function Hero() {
 			id="hero"
 			className="relative p-4 flex justify-center items-center min-h-screen w-screen bg-primary"
 		>
-			{/* purple background blobs */}
-			<div className="hidden md:block absolute top-0 -left-[35rem] w-[50rem] h-[50rem] opacity-20 filter blur-3xl bg-accent rounded-full" />
-			<div className="hidden md:block absolute -bottom-96 left-80 w-[40rem] h-[40rem] opacity-20 filter blur-3xl bg-accent rounded-full" />
+			{/* Grid background */}
+			<HeroBG />
 
-			<div className="mx-auto max-w-7xl flex flex-col-reverse md:flex-row md:justify-between items-center">
+			{/* purple background blob */}
+			<div className="hidden md:block absolute top-[5rem] -left-[35rem] w-[50rem] h-[50rem] opacity-20 filter blur-3xl bg-accent rounded-full z-10" />
+
+			<div className="mx-auto max-w-7xl flex flex-col-reverse md:flex-row md:justify-between items-center z-20">
 				<div id="hero-text" className="flex flex-col gap-8 z-40">
 					<h1 className="font-[800] text-4xl md:text-5xl lg:text-7xl leading-tight md:leading-[4rem] lg:leading-[6rem]">
 						Manage All Your Digital Assets From One Place
@@ -91,10 +94,10 @@ export default function Hero() {
 				</div>
 
 				{/* 3d model of ethereum crypto coin */}
-				<div className="relative animate-bounce-slow">
+				<div className="relative animate-bounce-slow z-50">
 					<Canvas
 						camera={{ position: [0, 0, 500], fov: 90 }}
-						style={{ width: canvasSize.width, height: canvasSize.height }}
+						style={{ width: canvasSize.width, height: canvasSize.height, zIndex: "100" }}
 					>
 						<Suspense fallback={null}>
 							<ambientLight intensity={1} />
@@ -104,8 +107,8 @@ export default function Hero() {
 									luminanceThreshold={0} // Areas brighter than this value will be bloomed
 									luminanceSmoothing={0.9} // Transition between bloomed and non-bloomed areas
 									intensity={3} // Strength of the bloom effect
-									kernelSize={5} // The blur kernel size, can affect performance and appearance
-									height={500} // Lower values can improve performance with less quality
+									kernelSize={5} // The blur kernel size
+									height={500}
 								/>
 							</EffectComposer>
 							<Hero3DModel
@@ -114,8 +117,9 @@ export default function Hero() {
 							/>
 						</Suspense>
 					</Canvas>
-					<div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[20rem] h-[20rem] lg:w-[30rem] lg:h-[30rem] opacity-20 filter blur-3xl bg-accent rounded-full" />
-					{/* <Image src="/PNG/Ethereum.png" width={600} height={600} alt="IDO hero image" /> */}
+
+					{/* purple background blob */}
+					<div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[20rem] h-[20rem] lg:w-[30rem] lg:h-[30rem] opacity-20 filter blur-3xl bg-accent rounded-full z-50" />
 				</div>
 			</div>
 		</section>

@@ -96,6 +96,26 @@ body {
 	animation: bounce-slow 4s ease-in-out infinite;
 }
 
+/* faded grid background for home hero section */
+#home-hero-background {
+	height: 100vh;
+	width: 100vw;
+	background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+	background-size: 200px 200px; /* Size of the grid cells */
+	position: absolute;
+	left: 0;
+	top: 0;
+	box-shadow: 0px 0px 100px 150px #141416 inset;
+}
+
+@media only screen and (max-width: 600px) {
+	#home-hero-background {
+		background-size: 100px 100px; /* Size of the grid cells */
+		box-shadow: 0px 0px 100px 80px #141416 inset;
+	}
+}
+
 /* Firefox scrollbar */
 * {
 	scrollbar-width: thin;
