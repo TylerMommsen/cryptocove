@@ -100,12 +100,17 @@ const config = {
 					"0%, 100%": { transform: "translateY(0)" }, // Start and end at the original position
 					"50%": { transform: "translateY(50px)" }, // Return to the original position in the middle
 				},
+				"fade-in": {
+					"0%": { opacity: "0" },
+					"100%": { opacity: "1" },
+				},
 			},
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
 				"open-menu": "open-menu 0.3s ease-in-out forwards",
 				bounceAnim: "bounceAnim 8s ease-in-out infinite",
+				fadeIn: "fade-in 2s ease-out forwards",
 			},
 			screens: {
 				lg: "992px",

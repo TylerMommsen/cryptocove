@@ -76,10 +76,6 @@ body {
 	box-shadow: 0 0 15px var(--accent);
 }
 
-#header {
-	box-shadow: 0 10px 15px rgba(20, 20, 22, 1);
-}
-
 /* hero page image animation */
 @keyframes bounce-slow {
 	0%,

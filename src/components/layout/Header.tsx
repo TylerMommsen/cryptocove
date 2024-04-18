@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "@/components/ui/dialog";
@@ -17,13 +17,38 @@ import SidebarPopup from "../common/SidebarPopup";
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isScrolled, setIsScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const offset = window.scrollY;
+			if (offset > 50) {
+				setIsScrolled(true);
+			} else {
+				setIsScrolled(false);
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
 
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
 	};
 
 	return (
-		<header id="header" className="bg-primary2 fixed top-0 w-screen z-50">
+		<header
+			id="header"
+			className={`${
+				isScrolled
+					? "bg-primary2 shadow-[0_10px_20px_0_rgba(24,25,29,0.8)] ease-out duration-700"
+					: "bg-transparent ease-out duration-500"
+			} transition-all fixed top-0 w-screen z-50`}
+		>
 			<section className="max-w-[1920px] text-secondary2 flex justify-between pt-4 pb-4 pl-6 pr-6 items-center mx-auto">
 				<div id="header-left" className="flex items-center gap-8 lg:gap-12">
 					<button
