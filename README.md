@@ -23,7 +23,7 @@ CryptoCove is a mockup crypto website that provides users with up-to-date inform
 
 ## Screenshots
 
-![cryptocovepreview1](https://github.com/TylerMommsen/cryptocove/assets/65496518/664992df-b4b1-4544-9d91-0cd6ae5d257c)
+![cryptocovepreview1](https://github.com/TylerMommsen/cryptocove/assets/65496518/46b6d73b-d076-48d2-a338-ba996658d1f8)
 ![cryptocovepreview2](https://github.com/TylerMommsen/cryptocove/assets/65496518/2429f537-e7b5-4fb0-bfb6-ad157cc77825)
 ![cryptocovepreview3](https://github.com/TylerMommsen/cryptocove/assets/65496518/7c44d2be-2562-4ec0-91c0-b5ef1fab33c0)
 ![cryptocovepreview4](https://github.com/TylerMommsen/cryptocove/assets/65496518/dcd396e1-bb29-4fbb-ad2c-3f80a923a02d)
